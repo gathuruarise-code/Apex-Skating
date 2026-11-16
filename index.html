@@ -66,6 +66,19 @@
 
     <footer>STREET SKATE <span>•</span> BUILT FOR THE NEXT GENERATION</footer>
   </main>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js")
+      .then(registration => {
+        console.log("Offline support enabled:", registration.scope);
+      })
+      .catch(error => {
+        console.error("Service worker registration failed:", error);
+      });
+  });
+}
+</script>
 </body>
 </html>
 
